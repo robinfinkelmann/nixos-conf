@@ -11,6 +11,13 @@ let
     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in
 {
+  # Replace kernel's fbcon with kmscon
+  services.kmscon = {
+    enable = true;
+    hwRender = true;
+    useXkbConfig = true;
+  };
+
   services.displayManager = {
     gdm.enable = true;
   };
