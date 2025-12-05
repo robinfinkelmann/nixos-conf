@@ -1,0 +1,25 @@
+diff --git a/makefile b/makefile
+index 85376a3..3db5e2d 100755
+--- a/makefile
++++ b/makefile
+@@ -32,13 +32,13 @@ build:
+ 	make clean
+ 	$(CXX) -o $(program) $(cflags) *.cxx $(ldflags)
+ 	# set up the filter directory in the ppd correctly.
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp100.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp200.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp240.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp440.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp450.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp620.ppd
+-	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(filterdir)/$(program)">g' siislp650.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp100.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp200.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp240.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp440.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp450.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp620.ppd
++	perl -p -i -e 's(^.cupsFilter.*\Z) <*cupsFilter: "application/vnd.cups-raster 0 $(program)">g' siislp650.ppd
+ 	# set up the icon directory in the ppd correctly.
+ 	perl -p -i -e "s#\(^.APPrinterIconPath.*\$\)\n##g" siislp100.ppd
+ 	perl -p -i -e "s#\(^.APPrinterIconPath.*\$\)\n##g" siislp200.ppd
