@@ -37,14 +37,12 @@ in
   };
 
   config = {
-    networking.networkmanager.enable = lib.mkIf cfg.networkmanager true;
+    networking.networkmanager = {
+      enable = lib.mkIf cfg.networkmanager true;
+      plugins = lib.optional (cfg.openconnect && cfg.networkmanager) pkgs.networkmanager-openconnect;
+    };
 
-    environment = lib.mkMerge [
-      (lib.mkIf cfg.openconnect { systemPackages = [ pkgs.openconnect ]; })
-      (lib.mkIf (cfg.openconnect && cfg.networkmanager) {
-        systemPackages = [ pkgs.networkmanager-openconnect ];
-      })
-    ];
+    environment.systemPackages = lib.optional cfg.openconnect pkgs.openconnect;
 
     # Enable the OpenSSH daemon.
     services.openssh = lib.mkIf cfg.sshd {
