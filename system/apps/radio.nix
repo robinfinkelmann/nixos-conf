@@ -32,8 +32,6 @@ in
     services.udev.extraRules = ''
       # Crazyradio (normal operation)
       SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="7777", MODE="0664", GROUP="plugdev"
-      # Crazyradio 2.0 (normal operation) TODO this is not documented anywhere, WTH?!?!?
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="35f0", ATTRS{idProduct}=="bad2", MODE="0664", GROUP="plugdev"
       # Bootloader
       SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="0101", MODE="0664", GROUP="plugdev"
       # Crazyflie (over USB)
