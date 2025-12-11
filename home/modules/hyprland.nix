@@ -187,11 +187,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    #plugins = [
-    #  inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
-    #];
-    # TODO: hyprlock, hyprscroll
-
     settings = {
       # Programs
       "$terminal" = "alacritty";

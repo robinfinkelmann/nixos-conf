@@ -5,11 +5,6 @@
   ...
 }:
 
-let
-  hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  xdg-desktop-portal-hyprland =
-    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-in
 {
   # Replace kernel's fbcon with kmscon
   services.kmscon = {
@@ -24,14 +19,8 @@ in
 
   # Enable Hyprland
   programs.hyprland = {
-    # Install the packages from nixpkgs
     enable = true;
-    # Whether to enable XWayland (default true)
     xwayland.enable = true;
-    # set the flake package
-    package = hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = xdg-desktop-portal-hyprland;
   };
   environment.sessionVariables = {
     # Hint electron apps to use wayland
@@ -42,7 +31,7 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = [
-      xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
   };
