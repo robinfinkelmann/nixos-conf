@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -41,7 +41,7 @@
     inputs@{
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      #nixpkgs-unstable,
       nixos-hardware,
       agenix,
       agenix-rekey,
@@ -59,11 +59,11 @@
         inherit system;
         overlays = [ agenix-rekey.overlays.default ];
       };
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [ agenix-rekey.overlays.default ];
-      };
+      #pkgs-unstable = import nixpkgs-unstable {
+      #  inherit system;
+      #  config.allowUnfree = true;
+      #  overlays = [ agenix-rekey.overlays.default ];
+      #};
       defaultModules = [
         agenix.nixosModules.default
         agenix-rekey.nixosModules.default
@@ -77,7 +77,7 @@
         nix-laptop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
+            #inherit pkgs-unstable;
             inherit agenix;
           };
           modules = defaultModules ++ [
@@ -104,7 +104,7 @@
           system = "aarch64-linux";
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
+            #inherit pkgs-unstable;
           };
           modules = defaultModules ++ [
             ./hosts/friendlynas/configuration.nix
@@ -114,7 +114,7 @@
         nix-desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
+            #inherit pkgs-unstable;
             inherit agenix;
           };
           modules = defaultModules ++ [
