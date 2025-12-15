@@ -32,5 +32,6 @@ in
         "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIC2ofY861X+o2tP6F1N0Tvuw8u4ImUSxuP+f/fteu+L9AAAABHNzaDo= ssh:robin-yubi1"
       ];
     };
+    nix.settings.trusted-users = [ "robin" ];
   };
 }
