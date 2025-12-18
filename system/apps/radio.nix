@@ -18,7 +18,7 @@ in
       pkgs.fldigi
       pkgs.chirp
       pkgs.uhd
-      # pkgs.sdrangel # TODO does not build
+      pkgs.sdrangel
       (pkgs.gnuradio.override {
         extraPackages = with pkgs.gnuradioPackages; [
           osmosdr
