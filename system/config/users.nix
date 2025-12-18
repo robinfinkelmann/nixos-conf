@@ -24,6 +24,8 @@ in
         "vboxusers"
         "adbusers"
         "docker"
+        "scanner"
+        "lp"
       ];
       packages = [ ];
       shell = pkgs.fish;

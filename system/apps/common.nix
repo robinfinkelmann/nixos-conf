@@ -79,8 +79,7 @@ in
         # PDF
         pkgs.pdfmixtool
         pkgs.gscan2pdf
-        pkgs.kdePackages.skanpage
-        pkgs.kdePackages.skanlite
+        pkgs.simple-scan
         pkgs.kdePackages.okular
 
         # Office
