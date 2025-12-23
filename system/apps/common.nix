@@ -78,7 +78,7 @@ in
 
         # PDF
         pkgs.pdfmixtool
-        pkgs.gscan2pdf
+        # pkgs.gscan2pdf # TODO does not pass check
         pkgs.simple-scan
         pkgs.kdePackages.okular
 
