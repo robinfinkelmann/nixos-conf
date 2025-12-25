@@ -94,6 +94,7 @@ in
         pkgs.keepassxc
         pkgs.kdePackages.filelight
         pkgs.kdePackages.ark
+        pkgs.veracrypt
 
         # Other
         pkgs.tigervnc
