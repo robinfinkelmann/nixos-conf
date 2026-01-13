@@ -110,7 +110,12 @@
             ./hosts/friendlynas/configuration.nix
           ];
         };
-
+        nix-prox = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = defaultModules ++ [
+            ./hosts/proxmox/configuration.nix
+          ];
+        };
         nix-desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
