@@ -59,6 +59,7 @@ in
             ];
             endpoint = cfg.endpoint;
             publicKey = cfg.endpointPublicKey;
+            persistentKeepalive = 25;
           }
         ];
         privateKeyFile = config.age.secrets.wg0.path;
