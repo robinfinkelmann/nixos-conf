@@ -49,7 +49,7 @@
 
     fish = {
       enable = true;
-      shellInitLast = "fastfetch";
+      interactiveShellInit = "fastfetch";
     };
     starship = {
       enable = true;
