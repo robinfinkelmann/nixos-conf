@@ -187,6 +187,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
+    # This needs to be set to null if using the NixOS module of hyprland - otherwise some xdg stuff breaks
+    package = null;
+    portalPackage = null;
+
     settings = {
       # Programs
       "$terminal" = "alacritty";

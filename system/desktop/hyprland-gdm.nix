@@ -32,8 +32,9 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gtk # handles some interfaces that hyprland does not implement (namely org.freedesktop.portal.OpenURI)
     ];
+    xdgOpenUsePortal = true;
   };
 
   security.pam.services.hyprlock = { };
