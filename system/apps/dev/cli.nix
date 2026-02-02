@@ -14,5 +14,7 @@ in
 
     # This driver apparently also handles some generic FTDI devices
     services.upower.enableWattsUpPro = true;
+
+    services.udev.packages = [ pkgs.stlink ];
   };
 }
