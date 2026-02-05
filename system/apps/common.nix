@@ -78,7 +78,7 @@ in
 
         # PDF
         pkgs.pdfmixtool
-        # pkgs.gscan2pdf # TODO does not pass check
+        pkgs.gscan2pdf
         pkgs.simple-scan
         pkgs.kdePackages.okular
 
@@ -99,7 +99,8 @@ in
         # Other
         pkgs.tigervnc
         pkgs.freerdp
-        # pkgs.winboat # TODO does not build https://github.com/NixOS/nixpkgs/issues/462513
+        pkgs.winboat
+        pkgs.jameica
       ];
 
       programs.noisetorch.enable = true;
