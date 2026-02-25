@@ -23,7 +23,6 @@ in
         "libvirtd"
         "vboxusers"
         "adbusers"
-        "docker"
         "scanner"
         "lp"
       ];

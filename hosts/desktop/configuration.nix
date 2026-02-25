@@ -65,9 +65,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    pkgs.distrobox
   ];
 
-  virtualisation.docker.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Some programs need SUID wrappers, can be configured further or are
