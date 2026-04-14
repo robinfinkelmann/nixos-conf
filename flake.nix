@@ -2,8 +2,8 @@
   description = "Nixos config flake";
 
   inputs = {
-    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     agenix = {
@@ -17,7 +17,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,7 +29,7 @@
     };
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.11";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -41,7 +41,7 @@
     inputs@{
       self,
       nixpkgs,
-      #nixpkgs-unstable,
+      #nixpkgs-stable,
       nixos-hardware,
       agenix,
       agenix-rekey,
@@ -59,7 +59,7 @@
         inherit system;
         overlays = [ agenix-rekey.overlays.default ];
       };
-      #pkgs-unstable = import nixpkgs-unstable {
+      #pkgs-stable = import nixpkgs-stable {
       #  inherit system;
       #  config.allowUnfree = true;
       #  overlays = [ agenix-rekey.overlays.default ];
@@ -77,7 +77,7 @@
         nix-laptop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-unstable;
+            #inherit pkgs-stable;
             inherit agenix;
           };
           modules = defaultModules ++ [
@@ -104,7 +104,7 @@
           system = "aarch64-linux";
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-unstable;
+            #inherit pkgs-stable;
           };
           modules = defaultModules ++ [
             ./hosts/friendlynas/configuration.nix
@@ -119,7 +119,7 @@
         nix-desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-unstable;
+            #inherit pkgs-stable;
             inherit agenix;
           };
           modules = defaultModules ++ [

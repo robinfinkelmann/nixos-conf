@@ -20,7 +20,7 @@ in
 
         pkgs.wget
         pkgs.btop
-        pkgs.nixfmt-rfc-style
+        pkgs.nixfmt
         pkgs.nixpkgs-fmt
         pkgs.usbutils
         pkgs.nix-output-monitor

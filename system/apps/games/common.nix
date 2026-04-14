@@ -14,7 +14,7 @@ in
       # Native
       pkgs.heroic
       pkgs.ryubing
-      pkgs.cemu
+      #pkgs.cemu TODO broken
       pkgs.dolphin-emu
       pkgs.prismlauncher
       pkgs.bottles

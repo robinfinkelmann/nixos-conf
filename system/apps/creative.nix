@@ -42,7 +42,7 @@ in
       # Support for Windows VST2/VST3 plugins
       pkgs.yabridge
       pkgs.yabridgectl
-      pkgs.wineWowPackages.stable
+      pkgs.wineWow64Packages.stable
     ];
   };
 }
