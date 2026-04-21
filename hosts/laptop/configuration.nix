@@ -14,7 +14,7 @@
 
     # System config
     ../../system/robins-nixos.nix
-    ../../system/config/network/easyroam.nix # TODO imported only here because otherwise every host (???) required an agenix secret for easyroam
+    #../../system/config/network/easyroam.nix # TODO imported only here because otherwise every host (???) required an agenix secret for easyroam
 
     # Desktop
     ../../system/desktop/hyprland-gdm.nix

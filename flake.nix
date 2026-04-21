@@ -34,8 +34,12 @@
     };
 
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
-    nix-easyroam.url = "github:0x5a4/nix-easyroam/592540d50149d5ccc2e2ff5105d141ed710dad57";
-  };
+
+    nix-easyroam = {
+      url = "github:0x5a4/nix-easyroam";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
+ };
 
   outputs =
     inputs@{
