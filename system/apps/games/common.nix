@@ -14,10 +14,10 @@ in
       # Native
       pkgs.heroic
       pkgs.ryubing
-      #pkgs.cemu TODO broken
+      pkgs.cemu
       pkgs.dolphin-emu
       pkgs.prismlauncher
-      pkgs.bottles
+      #pkgs.bottles # TODO broken
     ];
 
     programs.steam = {
