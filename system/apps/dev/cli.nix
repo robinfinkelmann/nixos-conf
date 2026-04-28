@@ -16,5 +16,9 @@ in
     services.upower.enableWattsUpPro = true;
 
     services.udev.packages = [ pkgs.stlink ];
+
+    services.udev.extraRules = ''
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="c0ca", MODE="0664", GROUP="plugdev"
+    '';
   };
 }
