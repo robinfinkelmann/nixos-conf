@@ -101,9 +101,8 @@ in
         pkgs.freerdp
         pkgs.winboat
         pkgs.jameica
+        pkgs.easyeffects
       ];
-
-      programs.noisetorch.enable = true;
 
       programs.ausweisapp = {
         enable = true;

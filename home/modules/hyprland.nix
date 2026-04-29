@@ -227,7 +227,7 @@
         "power-profiles-daemon"
         "nm-applet --no-agent"
         "keepassxc"
-        "noisetorch -i"
+        "easyeffects -w"
         "sleep 5 && syncthingtray"
       ];
 
