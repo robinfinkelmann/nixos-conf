@@ -19,12 +19,11 @@ in
       pkgs.chirp
       pkgs.uhd
       pkgs.sdrangel
-      # TODO broken
-      #(pkgs.gnuradio.override {
-      #  extraPackages = with pkgs.gnuradioPackages; [
-      #    osmosdr
-      #  ];
-      #})
+      (pkgs.gnuradio.override {
+        extraPackages = with pkgs.gnuradioPackages; [
+          osmosdr
+        ];
+      })
       pkgs.spdlog
     ];
 
