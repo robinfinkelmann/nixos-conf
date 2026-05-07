@@ -120,6 +120,14 @@
             ./hosts/proxmox/configuration.nix
           ];
         };
+        ionos2 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = defaultModules ++ [
+            disko.nixosModules.disko
+            { disko.devices.disk.disk1.device = "/dev/vda"; }
+            ./hosts/ionos2/configuration.nix
+          ];
+        };
         nix-desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;

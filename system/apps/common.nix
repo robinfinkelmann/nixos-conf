@@ -10,104 +10,114 @@ let
   cfg = config.robins-nixos.apps;
 in
 {
-  config = lib.mkMerge [
-    {
-      environment.systemPackages = [
-        # Make all fanpeople angry at the same time
-        pkgs.nano
-        pkgs.vim
-        pkgs.helix
+  options.robins-nixos.apps = {
+    defaultApps = lib.mkOption {
+      default = true;
+      example = false;
+      description = "Whether to install default apps.";
+      type = lib.types.bool;
+    };
+  };
+  config = lib.mkIf cfg.defaultApps (
+    lib.mkMerge [
+      {
+        environment.systemPackages = [
+          # Make all fanpeople angry at the same time
+          pkgs.nano
+          pkgs.vim
+          pkgs.helix
 
-        pkgs.wget
-        pkgs.btop
-        pkgs.nixfmt
-        pkgs.nixpkgs-fmt
-        pkgs.usbutils
-        pkgs.nix-output-monitor
-        pkgs.nix-tree
-        pkgs.smartmontools
-        pkgs.nmap
-        pkgs.tmux
-        pkgs.ntfs3g
-        pkgs.exfat
-        pkgs.dua
-        pkgs.duf
-        pkgs.ffmpeg
-        pkgs.file
-        pkgs.util-linux
-      ];
+          pkgs.wget
+          pkgs.btop
+          pkgs.nixfmt
+          pkgs.nixpkgs-fmt
+          pkgs.usbutils
+          pkgs.nix-output-monitor
+          pkgs.nix-tree
+          pkgs.smartmontools
+          pkgs.nmap
+          pkgs.tmux
+          pkgs.ntfs3g
+          pkgs.exfat
+          pkgs.dua
+          pkgs.duf
+          pkgs.ffmpeg
+          pkgs.file
+          pkgs.util-linux
+        ];
 
-      programs.git = {
-        enable = true;
-        lfs.enable = true;
-      };
+        programs.git = {
+          enable = true;
+          lfs.enable = true;
+        };
 
-      # Fonts
-      fonts.packages = [
-        pkgs.comfortaa
-        pkgs.roboto
-        pkgs.roboto-mono
-        pkgs.roboto-slab
-        pkgs.roboto-serif
-        pkgs.inter
-      ]
-      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+        # Fonts
+        fonts.packages = [
+          pkgs.comfortaa
+          pkgs.roboto
+          pkgs.roboto-mono
+          pkgs.roboto-slab
+          pkgs.roboto-serif
+          pkgs.inter
+        ]
+        ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
-      # Theme
-      stylix.enable = true;
-      stylix.polarity = "dark";
-      # Photo "asphalt road and cliff horizon" by Rory Hennessey on Unsplash: https://unsplash.com/photos/asphalt-road-and-cliff-horizon-PBrovES5uuI
-      # See ./wallpapers/README.md
-      stylix.image = ./wallpapers/rory-hennessey-PBrovES5uuI-unsplash.jpg;
-      stylix.cursor.package = pkgs.bibata-cursors;
-      stylix.cursor.name = "Bibata-Modern-Classic";
-      stylix.cursor.size = 32;
-    }
-    (lib.mkIf cfg.gui {
-      environment.systemPackages = [
-        # Media
-        pkgs.vlc
-        pkgs.kdePackages.gwenview
-        pkgs.drawio
+        # Theme
+        stylix.enable = true;
+        stylix.polarity = "dark";
+        # Photo "asphalt road and cliff horizon" by Rory Hennessey on Unsplash: https://unsplash.com/photos/asphalt-road-and-cliff-horizon-PBrovES5uuI
+        # See ./wallpapers/README.md
+        stylix.image = ./wallpapers/rory-hennessey-PBrovES5uuI-unsplash.jpg;
+        stylix.cursor.package = pkgs.bibata-cursors;
+        stylix.cursor.name = "Bibata-Modern-Classic";
+        stylix.cursor.size = 32;
+      }
+      (lib.mkIf cfg.gui {
+        environment.systemPackages = [
+          # Media
+          pkgs.vlc
+          pkgs.kdePackages.gwenview
+          pkgs.drawio
 
-        # Web
-        pkgs.firefox
-        pkgs.thunderbird
-        pkgs.chromium
-        pkgs.tor-browser
+          # Web
+          pkgs.firefox
+          pkgs.thunderbird
+          pkgs.chromium
+          pkgs.tor-browser
 
-        # PDF
-        pkgs.pdfmixtool
-        #pkgs.gscan2pdf # TODO broken
-        pkgs.simple-scan
-        pkgs.kdePackages.okular
+          # PDF
+          pkgs.pdfmixtool
+          #pkgs.gscan2pdf # TODO broken
+          pkgs.simple-scan
+          pkgs.kdePackages.okular
 
-        # Office
-        pkgs.libreoffice-qt
-        pkgs.hunspell
-        pkgs.hunspellDicts.de_DE
-        pkgs.hunspellDicts.en_US
+          # Office
+          pkgs.libreoffice-qt
+          pkgs.hunspell
+          pkgs.hunspellDicts.de_DE
+          pkgs.hunspellDicts.en_US
 
-        # Files
-        pkgs.nextcloud-client
-        pkgs.obsidian
-        pkgs.keepassxc
-        pkgs.kdePackages.filelight
-        pkgs.kdePackages.ark
-        pkgs.veracrypt
+          # Files
+          pkgs.nextcloud-client
+          pkgs.obsidian
+          pkgs.keepassxc
+          pkgs.kdePackages.filelight
+          pkgs.kdePackages.ark
+          pkgs.veracrypt
 
-        # Other
-        pkgs.tigervnc
-        pkgs.freerdp
-        pkgs.winboat
-        pkgs.jameica
-        pkgs.easyeffects
-      ];
+          # Other
+          pkgs.tigervnc
+          pkgs.freerdp
+          pkgs.winboat
+          pkgs.jameica
+          pkgs.easyeffects
+        ];
 
-      programs.ausweisapp = {
-        enable = true;
-        openFirewall = true;
-      };
-    })
-  ];
+        programs.ausweisapp = {
+          enable = true;
+          openFirewall = true;
+        };
+      })
+    ]
+  );
 }
