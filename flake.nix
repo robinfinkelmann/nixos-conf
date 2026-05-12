@@ -39,6 +39,10 @@
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     }; 
+
+    wfb-rs = {
+      url = "github:s2outh/wfb-rs";
+    };
  };
 
   outputs =
@@ -102,6 +106,7 @@
             }
             #minesddm.nixosModules.default
             nix-easyroam.nixosModules.nix-easyroam
+            inputs.wfb-rs.nixosModules.default
           ];
         };
         friendlynas = nixpkgs.lib.nixosSystem {
