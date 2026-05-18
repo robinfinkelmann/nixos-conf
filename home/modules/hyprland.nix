@@ -228,11 +228,10 @@
         "nm-applet --no-agent"
         "keepassxc"
         "easyeffects -w"
-        "sleep 5 && syncthingtray"
+        "syncthingtray --wait"
       ];
 
       dwindle = {
-        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # You probably want this
       };
 
@@ -277,7 +276,6 @@
         "$mainMod, Space, exec, $menu"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, J, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
