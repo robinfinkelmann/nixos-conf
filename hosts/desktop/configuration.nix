@@ -16,7 +16,7 @@
     ../../system/robins-nixos.nix
 
     # Desktop
-    ../../system/desktop/hyprland-gdm.nix
+    ../../system/desktop/hyprland.nix
 
     # Syncthing
     ../../system/config/syncthing.nix
