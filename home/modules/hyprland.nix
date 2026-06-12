@@ -186,6 +186,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
 
     # This needs to be set to null if using the NixOS module of hyprland - otherwise some xdg stuff breaks
     package = null;

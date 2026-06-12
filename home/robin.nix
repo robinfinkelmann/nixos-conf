@@ -43,6 +43,9 @@
     pkgs.dua
   ];
 
+  # Stylix
+  stylix.targets.btop.enable = false;
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -107,9 +110,8 @@
       enable = true;
       enableDefaultConfig = false;
       includes = [ "config.secret" ];
-      matchBlocks = {
+      settings = {
         "*" = {
-          identityAgent = "none"; # TODO workaround to fix ssh, pls investigate agent not working
           identityFile = "~/.ssh/id_ed25519_sk_rk_robin-yubi1";
           identitiesOnly = true;
         };
