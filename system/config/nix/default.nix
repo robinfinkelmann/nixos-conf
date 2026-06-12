@@ -51,7 +51,9 @@ in
       ];
     };
     system.autoUpgrade = lib.mkIf cfg.auto-upgrade {
+      enable = true;
       flake = "github:robinfinkelmann/nixos-conf";
+      operation = "boot";
       allowReboot = true;
       rebootWindow = {
         lower = "12:00";
