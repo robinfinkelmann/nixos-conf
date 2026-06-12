@@ -14,6 +14,7 @@ in
       # Messages
       pkgs.telegram-desktop
       pkgs.signal-desktop
+      pkgs.fluffychat
 
       # Voice Chat
       pkgs.discord

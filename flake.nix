@@ -38,12 +38,12 @@
     nix-easyroam = {
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; 
+    };
 
     wfb-rs = {
       url = "github:s2outh/wfb-rs";
     };
- };
+  };
 
   outputs =
     inputs@{
@@ -125,12 +125,12 @@
             ./hosts/proxmox/configuration.nix
           ];
         };
-        ionos2 = nixpkgs.lib.nixosSystem {
+        ionos3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = defaultModules ++ [
             disko.nixosModules.disko
             { disko.devices.disk.disk1.device = "/dev/vda"; }
-            ./hosts/ionos2/configuration.nix
+            ./hosts/ionos3/configuration.nix
           ];
         };
         nix-desktop = nixpkgs.lib.nixosSystem rec {

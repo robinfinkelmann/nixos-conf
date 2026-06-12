@@ -16,13 +16,16 @@
 
     # System config
     ../../system/robins-nixos.nix
+
+    # Matrix
+    ./matrix.nix
   ];
 
   networking = {
-    hostName = "ionos2"; # Define your hostname.
+    hostName = "ionos3"; # Define your hostname.
     domain = "finkelmann.net";
   };
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsLONTh6ebkz71f+V40OTnwcemTzr3ImgXe1GK8q/cS";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGv6zZsS1ZPARaQ5NOK5Z08z9wwTQTTZQXj1LVYTkiXE";
 
   robins-nixos.apps.defaultApps = false; # save disk space
   robins-nixos.wireguard = {

@@ -13,16 +13,17 @@
     useXkbConfig = true;
   };
 
-    # Enable greetd
+  # Enable greetd
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = ''${pkgs.tuigreet}/bin/tuigreet \
-          --time \
-          --greeting "you shall not pass!" \
-          --remember \
-          --asterisks
+        command = ''
+          ${pkgs.tuigreet}/bin/tuigreet \
+                    --time \
+                    --greeting "you shall not pass!" \
+                    --remember \
+                    --asterisks
         '';
         user = "greeter";
       };
