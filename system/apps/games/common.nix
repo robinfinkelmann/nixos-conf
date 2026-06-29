@@ -12,12 +12,12 @@ in
   config = lib.mkIf (cfg.gui && cfg.games) {
     environment.systemPackages = [
       # Native
-      pkgs.heroic
+      #pkgs.heroic # TODO insecure
       pkgs.ryubing
       pkgs.cemu
-      pkgs.dolphin-emu
+      #pkgs.dolphin-emu # TODO broken
       pkgs.prismlauncher
-      #pkgs.bottles # TODO broken
+      pkgs.bottles
     ];
 
     programs.steam = {

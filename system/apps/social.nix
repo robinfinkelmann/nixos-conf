@@ -13,12 +13,11 @@ in
     environment.systemPackages = [
       # Messages
       pkgs.telegram-desktop
-      pkgs.signal-desktop
+      #pkgs.signal-desktop TODO insecure
       pkgs.fluffychat
 
       # Voice Chat
       pkgs.discord
-      pkgs.vesktop
       pkgs.discover-overlay
 
       # Music
