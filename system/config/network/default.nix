@@ -34,6 +34,7 @@ in
       description = "Whether to enable the Avahi";
       type = lib.types.bool;
     };
+    bluetooth = lib.mkEnableOption "Bluetooth";
   };
 
   config = {
@@ -64,5 +65,8 @@ in
         workstation = true;
       };
     };
+
+    hardware.bluetooth.enable = lib.mkIf cfg.bluetooth true;
+    services.blueman.enable = lib.mkIf cfg.bluetooth true;
   };
 }

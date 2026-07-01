@@ -30,6 +30,7 @@
 
   # NixOS
   robins-nixos.networking.openconnect = true;
+  robins-nixos.networking.bluetooth = true;
   robins-nixos.backup.enable = true;
   robins-nixos.sound.enable = true;
   robins-nixos.printing.enable = true;
@@ -39,11 +40,14 @@
   #  builder-hostname = "10.0.0.10";
   #};
   robins-nixos.hardware-security-keys.enable = true;
+  robins-nixos.virtualisation.enable = true;
+
   robins-nixos.wireguard = {
     enable = true;
     fileSystems = true;
     address = "10.0.0.21/24";
   };
+
   robins-nixos.apps = {
     radio = true;
     games = true;
@@ -53,23 +57,6 @@
     science = true;
     creative = true;
   };
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
-
-  environment.systemPackages = [
-    pkgs.distrobox
-  ];
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

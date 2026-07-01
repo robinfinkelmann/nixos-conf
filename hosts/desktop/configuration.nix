@@ -30,11 +30,13 @@
 
   robins-nixos.lang.keyboardLayout = "de";
   robins-nixos.networking.openconnect = true;
+  robins-nixos.networking.bluetooth = true;
   robins-nixos.backup.enable = true;
   robins-nixos.sound.enable = true;
   robins-nixos.printing.enable = true;
   robins-nixos.nix.remotebuild.builder.enable = true;
   robins-nixos.hardware-security-keys.enable = true;
+  robins-nixos.virtualisation.enable = true;
 
   robins-nixos.wireguard = {
     enable = true;
@@ -55,42 +57,7 @@
     creative = true;
   };
 
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   users.mutableUsers = false;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = [
-    pkgs.distrobox
-  ];
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

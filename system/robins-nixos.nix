@@ -13,6 +13,7 @@
     ./config/shell.nix
     ./config/users.nix
     ./config/wireguard
+    ./config/virtualisation.nix
     ./apps
   ];
 }
