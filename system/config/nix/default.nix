@@ -17,8 +17,8 @@ in
       type = lib.types.bool;
     };
     auto-upgrade = lib.mkOption {
-      default = true;
-      example = false;
+      default = false;
+      example = true;
       description = "Whether to automatically upgrade.";
       type = lib.types.bool;
     };
@@ -53,7 +53,7 @@ in
     system.autoUpgrade = lib.mkIf cfg.auto-upgrade {
       enable = true;
       flake = "github:robinfinkelmann/nixos-conf";
-      operation = "boot";
+      #operation = "boot";
       allowReboot = true;
       rebootWindow = {
         lower = "12:00";

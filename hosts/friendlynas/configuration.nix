@@ -38,6 +38,8 @@
   robins-nixos.apps = {
     dev = true;
   };
+  robins-nixos.nix.auto-upgrade = true;
+  system.autoUpgrade.allowReboot = lib.mkForce false;
 
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
