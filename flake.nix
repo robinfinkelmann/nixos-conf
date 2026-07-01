@@ -81,8 +81,8 @@
     in
     {
       nixosConfigurations = {
-        default = self.outputs.nixosConfigurations.nix-laptop;
-        nix-laptop = nixpkgs.lib.nixosSystem rec {
+        default = self.outputs.nixosConfigurations.laptop;
+        laptop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
             #inherit pkgs-stable;
@@ -133,7 +133,7 @@
             ./hosts/ionos3/configuration.nix
           ];
         };
-        nix-desktop = nixpkgs.lib.nixosSystem rec {
+        desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
             #inherit pkgs-stable;

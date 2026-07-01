@@ -25,7 +25,7 @@
     ../../system/config/syncthing.nix
   ];
 
-  networking.hostName = "nix-laptop"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFA2Zi2volmT8uSamcns/nJGs5lq4Mj8eZVH0NAhKu1Z";
 
   # NixOS

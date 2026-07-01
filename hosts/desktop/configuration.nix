@@ -25,7 +25,7 @@
     ./nvidia.nix
   ];
 
-  networking.hostName = "nix-desktop"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBPMF8UQEP29KpH9RVZdSh5GZkTj9JY/Tmk1Zyz7w5gR";
 
   robins-nixos.lang.keyboardLayout = "de";
