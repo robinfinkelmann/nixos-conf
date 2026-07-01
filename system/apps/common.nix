@@ -87,7 +87,7 @@ in
 
           # PDF
           pkgs.pdfmixtool
-          #pkgs.gscan2pdf # TODO broken
+          pkgs.gscan2pdf
           pkgs.simple-scan
           pkgs.kdePackages.okular
 

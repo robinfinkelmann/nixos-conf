@@ -13,7 +13,7 @@ in
     environment.systemPackages = [
       # Messages
       pkgs.telegram-desktop
-      #pkgs.signal-desktop TODO insecure
+      pkgs.signal-desktop
       pkgs.fluffychat
 
       # Voice Chat
