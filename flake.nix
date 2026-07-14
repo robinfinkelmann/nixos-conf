@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+    flake-compat.url = "github:edolstra/flake-compat";
 
     disko = {
       url = "github:nix-community/disko";
