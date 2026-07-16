@@ -13,7 +13,7 @@ in
     environment.systemPackages = [
       # Photo
       pkgs.gimp3
-      #pkgs.inkscape TODO broken
+      pkgs.inkscape
 
       # Video
       pkgs.obs-studio
