@@ -108,7 +108,7 @@ in
           # Other
           pkgs.tigervnc
           pkgs.freerdp
-          pkgs.winboat
+          # pkgs.winboat # TODO insecure
           pkgs.jameica
           pkgs.easyeffects
         ];
