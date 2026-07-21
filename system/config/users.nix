@@ -29,8 +29,9 @@ in
       packages = [ ];
       shell = pkgs.fish;
       openssh.authorizedKeys.keys = [
-        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFSc/+2oA2KJZh0pJnZCTvDUf1Ji6oRt/h7TnGR/hP0bAAAAD3NzaDpyb2Jpbi1uaXRybw== ssh:robin-nitro"
-        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIC2ofY861X+o2tP6F1N0Tvuw8u4ImUSxuP+f/fteu+L9AAAABHNzaDo= ssh:robin-yubi1"
+        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFSc/+2oA2KJZh0pJnZCTvDUf1Ji6oRt/h7TnGR/hP0bAAAAD3NzaDpyb2Jpbi1uaXRybw== robin-nitro1"
+        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILJZlRTS/TsXxZMKOg9uL2qom5c/l5AC9c5CQ1K84nyTAAAABHNzaDo= robin-nitro2"
+        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIC2ofY861X+o2tP6F1N0Tvuw8u4ImUSxuP+f/fteu+L9AAAABHNzaDo= robin-yubi1"
       ];
     };
     nix.settings.trusted-users = [ "robin" ];
