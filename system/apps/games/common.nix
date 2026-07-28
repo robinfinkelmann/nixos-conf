@@ -17,7 +17,6 @@ in
       pkgs.cemu
       pkgs.dolphin-emu
       pkgs.prismlauncher
-      pkgs.bottles
     ];
 
     programs.steam = {
