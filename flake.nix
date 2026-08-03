@@ -106,7 +106,7 @@
             }
             #minesddm.nixosModules.default
             nix-easyroam.nixosModules.nix-easyroam
-            inputs.wfb-rs.nixosModules.default
+            #inputs.wfb-rs.nixosModules.default
           ];
         };
         friendlynas = nixpkgs.lib.nixosSystem {
