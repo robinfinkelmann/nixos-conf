@@ -19,6 +19,7 @@
 
     # Matrix
     ./matrix.nix
+    ./push.nix
   ];
 
   networking = {
