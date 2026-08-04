@@ -33,7 +33,7 @@
   robins-nixos.wireguard = {
     enable = true;
     address = "10.0.0.200/24";
-    endpoint = "192.168.0.129:51820";
+    endpoint = "raspberry.local:51820";
     endpointPublicKey = "zgdoxlAt2/b1B+TVeDcqomkaceqp+lODgFhVuKCJx2M=";
   };
   robins-nixos.apps = {
