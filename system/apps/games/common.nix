@@ -24,5 +24,7 @@ in
       extest.enable = true;
       remotePlay.openFirewall = true;
     };
+
+    services.udev.packages = [ pkgs.dolphin-emu ];
   };
 }
