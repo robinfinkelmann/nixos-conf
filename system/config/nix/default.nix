@@ -43,10 +43,12 @@ in
         in
         120 * minute;
       substituters = [
+        "http://cache.finkelmann.net"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
       ];
       trusted-public-keys = [
+        "cache.finkelmann.net:mi7VQ6PDeKgxd4ZiLB7+0r+sMOm/x2XhAks9mnRqjD4="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };

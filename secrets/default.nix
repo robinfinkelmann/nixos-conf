@@ -69,4 +69,19 @@
       }
       echo "$priv"
     '';
+
+  age.generators.nix =
+    {
+      pkgs,
+      secret,
+      file,
+      ...
+    }:
+    ''
+      priv=$(${pkgs.nix}/bin/nix key generate-secret --key-name ${secret.settings.key-name})
+      ${pkgs.nix}/bin/nix key convert-secret-to-public <<< "$priv" > ${
+        lib.escapeShellArg (lib.removeSuffix ".age" file + ".pub")
+      }
+      echo "$priv"
+    '';
 }
