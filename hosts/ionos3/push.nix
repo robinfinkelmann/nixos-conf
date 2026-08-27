@@ -10,12 +10,20 @@ let
 in
 {
   services.nginx = {
+    enable = true;
+
+    recommendedTlsSettings = true;
+    recommendedOptimisation = true;
+    recommendedGzipSettings = true;
+    recommendedProxySettings = true;
+
     virtualHosts = {
       ${url} = {
         enableACME = true;
         forceSSL = true;
         locations."/" = {
           proxyPass = "http://[::1]:${port}";
+          proxyWebsockets = true;
         };
       };
     };
