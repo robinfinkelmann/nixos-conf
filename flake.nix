@@ -33,15 +33,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
-
     nix-easyroam = {
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wfb-rs = {
-      url = "github:s2outh/wfb-rs";
     };
   };
 
@@ -57,7 +51,6 @@
       flake-utils,
       disko,
       stylix,
-      minegrub-theme,
       nix-easyroam,
       ...
     }:
@@ -75,7 +68,6 @@
       defaultModules = [
         agenix.nixosModules.default
         agenix-rekey.nixosModules.default
-        minegrub-theme.nixosModules.default
         stylix.nixosModules.stylix
       ];
     in
@@ -85,8 +77,6 @@
         laptop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-stable;
-            inherit agenix;
           };
           modules = defaultModules ++ [
             ./hosts/laptop/configuration.nix
@@ -97,36 +87,27 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.robin = import ./home/robin.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
               home-manager.extraSpecialArgs = {
                 inherit inputs;
               };
             }
-            #minesddm.nixosModules.default
             nix-easyroam.nixosModules.nix-easyroam
-            #inputs.wfb-rs.nixosModules.default
           ];
         };
         friendlynas = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-stable;
           };
           modules = defaultModules ++ [
             ./hosts/friendlynas/configuration.nix
           ];
         };
         nix-prox = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           modules = defaultModules ++ [
             ./hosts/proxmox/configuration.nix
           ];
         };
         ionos3 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           modules = defaultModules ++ [
             disko.nixosModules.disko
             { disko.devices.disk.disk1.device = "/dev/vda"; }
@@ -136,8 +117,6 @@
         desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {
             inherit inputs;
-            #inherit pkgs-stable;
-            inherit agenix;
           };
           modules = defaultModules ++ [
             ./hosts/desktop/configuration.nix
