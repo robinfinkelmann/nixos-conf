@@ -52,6 +52,8 @@
   services.nfs.server.enable = true;
   networking.firewall.allowedTCPPorts = [ 2049 ];
 
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
+
   hardware.enableRedistributableFirmware = true;
   hardware = {
     deviceTree = {
