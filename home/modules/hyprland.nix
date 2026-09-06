@@ -14,8 +14,6 @@
   ];
 
   home.packages = [
-    # file manager
-    pkgs.nautilus
     # wallapaper
     pkgs.hyprpaper
     # keyring
@@ -146,6 +144,11 @@
       ];
       terminal = "${pkgs.alacritty}/bin/alacritty";
     };
+    yazi = {
+      enable = true;
+      shellWrapperName = "y";  # `home.stateVersion` is less than "26.05".
+      enableFishIntegration = true;
+    };
   };
 
   services = {
@@ -195,7 +198,7 @@
     settings = {
       # Programs
       "$terminal" = "alacritty";
-      "$fileManager" = "nautilus";
+      "$fileManager" = "alacritty -e yazi";
       "$menu" = "rofi -show drun";
       "$code" = "code";
       "$browser" = "firefox";
