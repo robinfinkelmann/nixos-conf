@@ -124,6 +124,12 @@
                   ./hosts/ionos3/configuration.nix
                 ];
               };
+              server = nixpkgs.lib.nixosSystem {
+                modules = defaultModules ++ [
+                  disko.nixosModules.disko
+                  ./hosts/server/configuration.nix
+                ];
+              };
               desktop = nixpkgs.lib.nixosSystem rec {
                 specialArgs = {
                   inherit inputs;
