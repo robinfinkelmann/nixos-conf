@@ -63,7 +63,6 @@ in
           }
         ];
         privateKeyFile = config.age.secrets.wg0.path;
-        dns = [ "10.0.0.100" ];
       };
 
       networking.hosts = {
