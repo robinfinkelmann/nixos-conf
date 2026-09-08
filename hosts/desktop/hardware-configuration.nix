@@ -10,36 +10,10 @@
   ...
 }:
 
-let
-  plymouth-minecraft-theme =
-    inputs.plymouth-minecraft-theme.packages.${pkgs.system}.plymouth-minecraft-theme;
-in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-
-  # Bootloader.
-  # boot.loader.systemd-boot = {
-  #   enable = lib.mkForce false;
-  # };
-  # boot.loader.grub = {
-  #   enable = true;
-  #   device = "nodev";
-  #   efiSupport = true;
-  #   memtest86.enable = true;
-  #   minegrub-theme = {
-  #     enable = true;
-  #     splash = "100% Flakes!";
-  #     background = "background_options/1.8  - [Classic Minecraft].png";
-  #     boot-options-count = 4;
-  #   };
-  # };
-  robins-nixos.efiboot = {
-    enable = true;
-    systemd-boot.enable = true;
-    grub.enable = false;
-  };
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -66,19 +40,6 @@ in
     "rd.udev.log_level=3"
     "udev.log_priority=3"
   ];
-  # Hide the OS choice for bootloaders.
-  # It's still possible to open the bootloader list by pressing any key
-  # It will just not appear on screen unless a key is pressed
-  #boot.loader.timeout = 0;
-
-  boot.initrd.systemd.enable = true;
-  boot.plymouth = {
-    enable = true;
-    #themePackages = [
-    #  plymouth-minecraft-theme
-    #];
-    #theme = "mc";
-  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/cf95cda5-b649-4bfb-a1a4-fb648a315e74";

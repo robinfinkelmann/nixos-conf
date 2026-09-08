@@ -33,6 +33,7 @@
     enable = true;
     address = "10.0.0.4/24";
   };
+  robins-nixos.efiboot = false;
 
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already

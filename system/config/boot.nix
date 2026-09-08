@@ -10,7 +10,12 @@ let
 in
 {
   options.robins-nixos.efiboot = {
-    enable = lib.mkEnableOption "Enable Boot Config with Efi";
+    enable = lib.mkOption {
+      default = true;
+      example = false;
+      description = "Enable Boot Config with Efi";
+      type = lib.types.bool;
+    };
     systemd-boot = {
       enable = lib.mkOption {
         default = true;

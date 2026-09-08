@@ -16,7 +16,6 @@
     # System config
     ../../system/robins-nixos.nix
   ];
-  robins-nixos.apps.defaultApps = false; # save disk space
 
   networking = {
     hostName = "server"; # Define your hostname.

@@ -30,7 +30,6 @@
   networking.hostName = "friendlynas"; # Define your hostname.
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHb2OZsWnbgZXeubVub4BAIqz7F+F9R52QPjdz8iSrDp";
 
-  robins-nixos.efiboot.enable = true;
   robins-nixos.hardware-security-keys.enable = true;
   robins-nixos.wireguard = {
     enable = true;
