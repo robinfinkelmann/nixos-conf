@@ -146,7 +146,7 @@
     };
     yazi = {
       enable = true;
-      shellWrapperName = "y";  # `home.stateVersion` is less than "26.05".
+      shellWrapperName = "y"; # `home.stateVersion` is less than "26.05".
       enableFishIntegration = true;
     };
   };

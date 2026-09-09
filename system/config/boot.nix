@@ -44,6 +44,12 @@ in
       description = "Whether to enable the memtest86 in the boot menu.";
       type = lib.types.bool;
     };
+    plymouth = lib.mkOption {
+      default = false;
+      example = true;
+      description = "Whether to enable plymouth.";
+      type = lib.types.bool;
+    };
   };
   config = lib.mkIf cfg.enable {
     boot.loader.systemd-boot = {
@@ -60,5 +66,10 @@ in
     };
     boot.loader.efi.canTouchEfiVariables = true;
     services.fwupd.enable = true;
+
+    boot.initrd.systemd.enable = cfg.plymouth;
+    boot.plymouth = {
+      enable = cfg.plymouth;
+    };
   };
 }

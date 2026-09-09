@@ -41,6 +41,7 @@
   #};
   robins-nixos.hardware-security-keys.enable = true;
   robins-nixos.virtualisation.enable = true;
+  robins-nixos.efiboot.plymouth = true;
 
   robins-nixos.wireguard = {
     enable = true;
