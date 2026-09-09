@@ -17,9 +17,10 @@
     # System config
     ../../system/robins-nixos.nix
 
-    # Matrix
+    # Services
     ./matrix.nix
     ./push.nix
+    ./cache.nix
   ];
 
   networking = {
@@ -33,7 +34,7 @@
     enable = true;
     address = "10.0.0.4/24";
   };
-  robins-nixos.efiboot = false;
+  robins-nixos.efiboot.enable = false;
 
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
