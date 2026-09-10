@@ -9,7 +9,7 @@
 }:
 
 {
-  imports = [
+  imports = lib.optionals osConfig.programs.hyprland.enable [
     ./modules/hyprland.nix
   ];
 

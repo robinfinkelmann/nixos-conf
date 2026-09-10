@@ -17,7 +17,7 @@
     #../../system/config/network/easyroam.nix # TODO imported only here because otherwise every host (???) required an agenix secret for easyroam
 
     # Desktop
-    ../../system/desktop/hyprland.nix
+    ../../system/desktop/cosmic.nix
 
     #../../system/apps/custom/slp.nix
 
