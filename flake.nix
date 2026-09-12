@@ -42,6 +42,17 @@
     };
   };
 
+  # On trusted systems / installs: add the binary cache to the devshell
+  # Disabled by default because it is not handled well in direnv
+  #nixConfig = {
+  #  extra-substituters = [
+  #    "http://cache.finkelmann.net"
+  #  ];
+  #  extra-trusted-public-keys = [
+  #    "cache.finkelmann.net:mi7VQ6PDeKgxd4ZiLB7+0r+sMOm/x2XhAks9mnRqjD4="
+  #  ];
+  #};
+
   outputs =
     inputs@{
       self,
