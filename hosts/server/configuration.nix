@@ -21,7 +21,7 @@
     hostName = "server"; # Define your hostname.
     domain = "finkelmann.net";
   };
-  #age.rekey.hostPubkey = "";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDCJqtyQXov1IPTqKmzxReACB3nQbKlhbAfQ02yQEufG";
 
   robins-nixos.wireguard = {
     enable = true;
