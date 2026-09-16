@@ -95,14 +95,17 @@ in
         setuid = true;
       };
 
-      # TODO: Some of the options cause instabilities when mounting without network, and timeouts when shutting down. Investigate pls!
       fileSystems."/media/data" = {
         device = "10.0.0.100:/horde/share";
         fsType = "nfs4";
         options = [
           "defaults"
           "x-systemd.automount"
-          "noauto"
+          "x-systemd.mount-timeout=5s"
+          "timeo=14"
+          "retrans=2"
+          "soft"
+          "bg"
           "_netdev"
           "user"
           "noatime"
