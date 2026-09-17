@@ -12,4 +12,5 @@
   # COSMIC uses GNOME Keyring, whoose SSH agent apparently can't handle FIDO2 resident keys
   services.gnome.gcr-ssh-agent.enable = false;
 
+  programs.kdeconnect.enable = true;
 }
