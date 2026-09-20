@@ -30,8 +30,8 @@
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
+    eventsConfig = "worker_connections 20000;";
     virtualHosts = {
-      # ... existing hosts config etc. ...
       "cache.finkelmann.net" = {
         locations."/".proxyPass =
           "http://${config.services.nix-serve.bindAddress}:${toString config.services.nix-serve.port}";
