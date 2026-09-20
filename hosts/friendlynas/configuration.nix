@@ -24,7 +24,9 @@
     # Desktop
     ../../system/desktop/plasma-sddm.nix
 
+    # Services
     ../../system/services/nix-serve
+    ../../system/services/immich.nix
   ];
 
   networking.hostName = "friendlynas"; # Define your hostname.
