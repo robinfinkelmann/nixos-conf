@@ -11,6 +11,13 @@
     hydraURL = "http://hydra.finkelmann.net";
     notificationSender = "hydra@localhost";
     useSubstitutes = true;
+    # Stylix requires allow-import-from-derivation to be enabled. TODO maybe investigate how to improve this
+    extraConfig = ''
+      allow_import_from_derivation = true
+      <git-input>
+        timeout = 3600
+      </git-input>
+    '';
   };
   nix.settings.allowed-uris = [
     "github:"
