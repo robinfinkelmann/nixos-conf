@@ -27,6 +27,7 @@
     # Services
     ../../system/services/nix-serve
     ../../system/services/immich.nix
+    ../../system/services/hydra.nix
   ];
 
   networking.hostName = "friendlynas"; # Define your hostname.

@@ -169,6 +169,12 @@
                 ];
               };
             };
+          hydraJobs = {
+            inherit (self) packages;
+            nixosConfigurations = builtins.mapAttrs (
+              name: value: value.config.system.build.toplevel
+            ) self.nixosConfigurations;
+          };
         };
         systems = [
           "x86_64-linux"
