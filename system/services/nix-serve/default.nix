@@ -19,6 +19,11 @@
       settings.key-name = "cache.finkelmann.net";
     };
   };
+  age.secrets.ssl-key-cache = {
+    rekeyFile = ./cache.finkelmann.net.key.age;
+    owner = "nginx";
+    group = "nginx";
+  };
 
   services.nix-serve = {
     enable = true;
@@ -30,14 +35,18 @@
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
+    recommendedTlsSettings = true;
     eventsConfig = "worker_connections 20000;";
     virtualHosts = {
       "cache.finkelmann.net" = {
+        addSSL = true;
+        sslCertificate = ./cache.finkelmann.net.crt;
+        sslCertificateKey = config.age.secrets.ssl-key-cache.path;
         locations."/".proxyPass =
           "http://${config.services.nix-serve.bindAddress}:${toString config.services.nix-serve.port}";
       };
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

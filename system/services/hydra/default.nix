@@ -6,6 +6,12 @@
 }:
 
 {
+  age.secrets.ssl-key-hydra = {
+    rekeyFile = ./hydra.finkelmann.net.key.age;
+    owner = "nginx";
+    group = "nginx";
+  };
+
   services.hydra = {
     enable = true;
     hydraURL = "http://hydra.finkelmann.net";
@@ -54,12 +60,16 @@
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
+    recommendedTlsSettings = true;
     virtualHosts = {
       "hydra.finkelmann.net" = {
+        forceSSL = true;
+        sslCertificate = ./hydra.finkelmann.net.crt;
+        sslCertificateKey = config.age.secrets.ssl-key-hydra.path;
         locations."/".proxyPass = "http://localhost:${toString config.services.hydra.port}";
       };
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

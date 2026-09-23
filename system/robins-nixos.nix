@@ -14,6 +14,7 @@
     ./config/users.nix
     ./config/wireguard
     ./config/virtualisation.nix
+    ./config/ssl
     ./apps
   ];
 }
