@@ -43,6 +43,10 @@
   robins-nixos.apps = {
     dev = true;
   };
+  robins-nixos.nix.remotebuild.client = {
+    enable = true;
+    builderHostname = "desktop";
+  };
   robins-nixos.nix.auto-upgrade = true;
 
   boot.supportedFilesystems = [ "zfs" ];

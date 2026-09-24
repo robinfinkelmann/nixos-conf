@@ -15,9 +15,9 @@ in
 
   config = lib.mkIf cfg.enable {
     users.users.remotebuild = {
-      isNormalUser = true;
-      createHome = false;
+      isSystemUser = true;
       group = "remotebuild";
+      useDefaultShell = true;
 
       openssh.authorizedKeys.keyFiles = [ ./builder-ssh-ed25519.pub ];
     };

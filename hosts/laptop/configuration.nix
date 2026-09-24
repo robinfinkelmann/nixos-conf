@@ -34,11 +34,6 @@
   robins-nixos.backup.enable = true;
   robins-nixos.sound.enable = true;
   robins-nixos.printing.enable = true;
-  robins-nixos.nix.remotebuild.builder.enable = true;
-  #robins-nixos.nix.remotebuild.client = {
-  #  enable = true;
-  #  builder-hostname = "10.0.0.10";
-  #};
   robins-nixos.hardware-security-keys.enable = true;
   robins-nixos.virtualisation.enable = true;
   robins-nixos.efiboot.plymouth = true;

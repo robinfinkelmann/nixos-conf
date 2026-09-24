@@ -13,11 +13,22 @@ in
 {
   options.robins-nixos.nix.remotebuild.client = {
     enable = lib.mkEnableOption "Enable Remote Building on this Machine";
-    builder-hostname = lib.mkOption {
+    builderHostname = lib.mkOption {
       default = "10.0.0.10";
       example = "hostname.example.com";
       description = "Hostname of the remote builder";
       type = lib.types.str;
+    };
+    builderSystems = lib.mkOption {
+      default = [
+        "x86_64-linux"
+        "i686-linux"
+      ];
+      example = [
+        "aarch64-linux"
+      ];
+      description = "System architectures of the remote builder";
+      type = lib.types.listOf lib.types.str;
     };
   };
 
@@ -38,15 +49,17 @@ in
 
     nix.buildMachines = [
       {
-        hostName = cfg.builder-hostname;
+        hostName = cfg.builderHostname;
         sshUser = "remotebuild";
         sshKey = config.age.secrets.nix-remotebuild-ssh.path;
-        system = pkgs.stdenv.hostPlatform.system;
+        systems = cfg.builderSystems;
         supportedFeatures = [
+          "kvm"
           "nixos-test"
           "big-parallel"
-          "kvm"
+          "benchmark"
         ];
+        maxJobs = 4;
       }
     ];
   };
