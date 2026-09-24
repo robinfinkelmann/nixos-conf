@@ -101,6 +101,7 @@ in
           pkgs.nextcloud-client
           pkgs.obsidian
           pkgs.keepassxc
+          pkgs.bitwarden-desktop
           pkgs.kdePackages.filelight
           pkgs.kdePackages.ark
           pkgs.veracrypt

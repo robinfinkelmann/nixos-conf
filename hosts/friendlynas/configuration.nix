@@ -28,6 +28,7 @@
     ../../system/services/nix-serve
     ../../system/services/immich
     ../../system/services/hydra
+    ../../system/services/vaultwarden
   ];
 
   networking.hostName = "friendlynas"; # Define your hostname.

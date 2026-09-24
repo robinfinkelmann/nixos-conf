@@ -60,6 +60,6 @@ EOF
 
 ```bash
 openssl x509 -req -in keys/finkelmann.net.csr \
-  -CA crts/local_ca.crt -CAkey keys/local_ca_encrypted.key -CAcreateserial \
+  -CA crts/local_ca.crt -CAkey keys/local_ca_encrypted.key -CAserial keys/local_ca.srl \
   -out crts/finkelmann.net.crt -days 825 -sha256 -extfile keys/finkelmann.net.san.ext
 ```
