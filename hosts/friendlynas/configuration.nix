@@ -21,9 +21,6 @@
     # System config
     ../../system/robins-nixos.nix
 
-    # Desktop
-    ../../system/desktop/plasma-sddm.nix
-
     # Services
     ../../system/services/nix-serve
     ../../system/services/immich
