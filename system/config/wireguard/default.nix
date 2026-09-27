@@ -24,7 +24,7 @@ in
       type = lib.types.str;
     };
     endpoint = lib.mkOption {
-      default = "finkelmann.net:51820";
+      default = "ionos1.finkelmann.net:51820";
       description = "Endpoint of the Peer";
       type = lib.types.str;
     };
