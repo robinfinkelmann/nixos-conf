@@ -44,6 +44,9 @@ in
           pkgs.ffmpeg
           pkgs.file
           pkgs.util-linux
+          pkgs.net-tools
+          pkgs.iotop
+          pkgs.pciutils
         ];
 
         programs.git = {
