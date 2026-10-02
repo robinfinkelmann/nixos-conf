@@ -99,6 +99,7 @@
       settings = {
         user.name = "Robin Finkelmann";
         user.email = "robin.finkelmann@gmail.com";
+        gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
       };
       signing = {
         format = "ssh";
@@ -114,12 +115,12 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
-      addKeysToAgent = "yes";
       includes = [ "config.secret" ];
       settings = {
         "*" = {
           identityFile = "~/.ssh/id_ed25519_sk_rk_robin-nitro2";
           identitiesOnly = true;
+          AddKeysToAgent = "yes";
         };
       };
     };
@@ -141,6 +142,10 @@
     enable = true;
     defaultMaximumIdentityLifetime = 3600;
   };
+  home.file.".config/git/allowed_signers".text = ''
+    ${config.programs.git.settings.user.email} sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIApE2mmjQgMW3RhCQPNJys7aiDmuZN9hKzy4bO7TmT/aAAAAD3NzaDpnaXQtc2lnbmluZw== robin-nitro2_git-signing
+    ${config.programs.git.settings.user.email} sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDhb7IteXbv+ywStPoIwaTCU8kHVZGbvDOBNSURSo89FAAAAD3NzaDpnaXQtc2lnbmluZw== robin-yubi1_git-signing
+  '';
 
   # For WiVRn:
   xdg.configFile."openxr/1/active_runtime.json".enable = osConfig.services.wivrn.enable;
