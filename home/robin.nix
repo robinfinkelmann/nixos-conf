@@ -100,6 +100,11 @@
         user.name = "Robin Finkelmann";
         user.email = "robin.finkelmann@gmail.com";
       };
+      signing = {
+        format = "ssh";
+        key = "~/.ssh/id_ed25519_sk_rk_robin-nitro2_git-signing.pub";
+        signByDefault = true;
+      };
     };
     delta = {
       enable = true;
@@ -109,10 +114,11 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
+      addKeysToAgent = "yes";
       includes = [ "config.secret" ];
       settings = {
         "*" = {
-          identityFile = "~/.ssh/id_ed25519_sk_rk_robin-yubi1";
+          identityFile = "~/.ssh/id_ed25519_sk_rk_robin-nitro2";
           identitiesOnly = true;
         };
       };
@@ -129,6 +135,11 @@
       #    pkgs.vscode-extensions.ms-vscode.cpptools
       #  ];
     };
+  };
+
+  services.ssh-agent = {
+    enable = true;
+    defaultMaximumIdentityLifetime = 3600;
   };
 
   # For WiVRn:
