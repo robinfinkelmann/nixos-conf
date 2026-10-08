@@ -25,6 +25,14 @@ in
   };
 
   config = lib.mkIf cfg.mydefaults {
+    age.secrets.github-token = {
+      rekeyFile = ./github-token.age;
+      mode = "444";
+    };
+    nix.extraOptions = ''
+      !include ${config.age.secrets.github-token.path} # TODO if I am ever bored, document this nightmare somewhere in the NixOS wiki / nix manual or create proper options in nixpkgs
+    '';
+
     # Enable flakes
     nix.settings.experimental-features = [
       "nix-command"
@@ -69,7 +77,7 @@ in
       enable = true;
       clean = {
         enable = true;
-        extraArgs = "--keep 10 --keep-since 90d";
+        extraArgs = "--keep 10 --keep-since 30d";
       };
     };
   };
