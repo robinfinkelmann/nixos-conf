@@ -190,6 +190,7 @@
               pkgs.nixd
               pkgs.git
               config.agenix-rekey.package
+              pkgs.age
               pkgs.age-plugin-fido2-hmac
             ];
             shellHook = ''
