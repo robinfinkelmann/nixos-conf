@@ -39,7 +39,7 @@ in
     ++ lib.optionals cfg.gui [
       # CAD / 3D
       pkgs.kicad
-      # pkgs.freecad #TODO fixme
+      pkgs.freecad
 
       # Space Observation
       pkgs.kstars

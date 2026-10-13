@@ -8,7 +8,7 @@
 
 {
   age.rekey = {
-    agePlugins = [ 
+    agePlugins = [
       pkgs.age
       pkgs.age-plugin-fido2-hmac
     ];

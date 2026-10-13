@@ -12,19 +12,18 @@ in
   config = lib.mkIf cfg.radio {
     hardware.rtl-sdr.enable = true;
     environment.systemPackages = [
-      # TODO soapyuhd is broken on 2026-09-30, add again!
-      #pkgs.gqrx
+      pkgs.gqrx
       pkgs.gpredict
       pkgs.rtl-sdr
       pkgs.fldigi
       pkgs.chirp
       pkgs.uhd
-      #pkgs.sdrangel
-      #(pkgs.gnuradio.override {
-      #  extraPackages = with pkgs.gnuradioPackages; [
-      #    osmosdr
-      #  ];
-      #})
+      pkgs.sdrangel
+      (pkgs.gnuradio.override {
+        extraPackages = with pkgs.gnuradioPackages; [
+          osmosdr
+        ];
+      })
       pkgs.spdlog
     ];
 
