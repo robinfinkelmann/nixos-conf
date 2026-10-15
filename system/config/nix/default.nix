@@ -42,7 +42,8 @@ in
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    nix.package = pkgs.lix;
+    # TODO switch back when fixed
+    #nix.package = pkgs.lix;
 
     nix.settings = {
       max-silent-time =

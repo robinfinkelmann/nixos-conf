@@ -185,7 +185,6 @@
           devShells.default = pkgs.mkShell {
             buildInputs = [
               pkgs.nh
-              pkgs.lix
               pkgs.nix-tree
               pkgs.nixd
               pkgs.git
