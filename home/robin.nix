@@ -84,6 +84,8 @@
         "nix"
         "latex"
         "typst"
+        "git_firefly"
+        "toml"
       ];
     };
 
@@ -123,18 +125,6 @@
           AddKeysToAgent = "yes";
         };
       };
-    };
-
-    vscode = {
-      enable = true;
-      #  extensions = [
-      #    pkgs.vscode-extensions.rust-lang.rust-analyzer
-      #    pkgs.vscode-extensions.ms-vscode.cpptools
-      #    pkgs.vscode-extensions.ms-python.python
-      #    pkgs.vscode-extensions.devsense.phptools-vscode
-      #    pkgs.vscode-extensions.ms-vscode.cpptools
-      #    pkgs.vscode-extensions.ms-vscode.cpptools
-      #  ];
     };
   };
 

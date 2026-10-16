@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (cfg.gui && cfg.dev) {
     environment.systemPackages = [
-      pkgs.vscode
+      pkgs.zed-editor
 
       pkgs.gparted
 
