@@ -35,15 +35,17 @@ in
 
       # Mathematics
       pkgs.octave
+
+      # Astronomy
+      pkgs.indi-full
     ]
     ++ lib.optionals cfg.gui [
       # CAD / 3D
       pkgs.kicad
       pkgs.freecad
 
-      # Space Observation
+      # Astronomy
       pkgs.kstars
-      pkgs.indi-full # technically not gui
       pkgs.stellarium
     ];
   };

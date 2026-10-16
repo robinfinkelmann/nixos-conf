@@ -5,9 +5,6 @@
   ...
 }:
 
-let
-  cfg = config.robins-nixos.apps;
-in
 {
   imports = [
     ./science.nix
@@ -71,8 +68,5 @@ in
       description = "Whether to install Development Apps.";
       type = lib.types.bool;
     };
-  };
-
-  config = {
   };
 }

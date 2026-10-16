@@ -13,12 +13,16 @@ in
     environment.systemPackages = [
       # Photo
       pkgs.gimp3
+      pkgs.krita
 
       # Video
       pkgs.obs-studio
       pkgs.kdePackages.kdenlive
       #pkgs.davinci-resolve
       pkgs.handbrake
+
+      # 3D
+      pkgs.blender
     ];
   };
 }

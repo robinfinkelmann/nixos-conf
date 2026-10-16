@@ -10,7 +10,10 @@ let
 in
 {
   config = lib.mkIf cfg.dev {
-    environment.systemPackages = [ pkgs.android-tools ];
+    environment.systemPackages = [
+      pkgs.android-tools
+      pkgs.nixd
+    ];
 
     # This driver apparently also handles some generic FTDI devices
     services.upower.enableWattsUpPro = true;
