@@ -53,8 +53,10 @@ in
     ];
   };
 
-  boot.initrd.luks.devices."luks-1aeeccac-4866-4ba7-b9e2-6778350c64fb".device =
-    "/dev/disk/by-uuid/1aeeccac-4866-4ba7-b9e2-6778350c64fb";
+  boot.initrd.luks.devices."luks-1aeeccac-4866-4ba7-b9e2-6778350c64fb" = {
+    device = "/dev/disk/by-uuid/1aeeccac-4866-4ba7-b9e2-6778350c64fb";
+    allowDiscards = true;
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/A4E5-A27B";
