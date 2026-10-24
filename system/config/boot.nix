@@ -67,7 +67,6 @@ in
     boot.loader.efi.canTouchEfiVariables = true;
     services.fwupd.enable = true;
 
-    boot.initrd.systemd.enable = cfg.plymouth;
     boot.plymouth = {
       enable = cfg.plymouth;
     };

@@ -27,9 +27,6 @@ in
     virtualisation.spiceUSBRedirection.enable = true;
     programs.virt-manager.enable = true;
 
-    virtualisation.virtualbox.host.enable = true;
-    #virtualisation.virtualbox.host.enableExtensionPack = true;
-
     hardware.saleae-logic.enable = true;
   };
 }
