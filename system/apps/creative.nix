@@ -19,7 +19,7 @@ in
       pkgs.obs-studio
       pkgs.kdePackages.kdenlive
       #pkgs.davinci-resolve
-      pkgs.handbrake
+      #pkgs.handbrake # TODO add when not broken
 
       # 3D
       pkgs.blender
