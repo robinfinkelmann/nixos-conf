@@ -56,14 +56,7 @@ in
     services.avahi = lib.mkIf cfg.avahi {
       enable = true;
       nssmdns4 = true;
-      publish = {
-        enable = true;
-        addresses = true;
-        domain = true;
-        hinfo = true;
-        userServices = true;
-        workstation = true;
-      };
+      nssmdns6 = true;
     };
 
     hardware.bluetooth.enable = lib.mkIf cfg.bluetooth true;

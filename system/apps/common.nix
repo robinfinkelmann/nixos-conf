@@ -90,7 +90,6 @@ in
 
           # PDF
           pkgs.pdfmixtool
-          pkgs.gscan2pdf
           pkgs.simple-scan
           pkgs.kdePackages.okular
 
