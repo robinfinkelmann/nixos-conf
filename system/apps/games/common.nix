@@ -16,6 +16,7 @@ in
       pkgs.ryubing
       pkgs.cemu
       pkgs.dolphin-emu
+      pkgs.azahar
       pkgs.prismlauncher
     ];
 

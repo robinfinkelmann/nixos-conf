@@ -111,6 +111,7 @@ in
           # Other
           pkgs.tigervnc
           pkgs.freerdp
+          pkgs.waypipe
           # pkgs.winboat # TODO insecure
           pkgs.jameica
           pkgs.easyeffects
