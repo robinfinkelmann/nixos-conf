@@ -20,9 +20,6 @@ in
       pkgs.yubioath-flutter
       pkgs.nitrokey-app2
       pkgs.pynitrokey
-      #pkgs.onlykey # TODO not working? and nwjs is not available on aarch
-      #pkgs.onlykey-cli # TODO insecure python3.13-ecdsa-0.19.1
-      #pkgs.onlykey-agent # TODO insecure python3.13-ecdsa-0.19.1
     ];
     services.udev.packages = [ pkgs.yubikey-personalization ];
     hardware.onlykey.enable = true;

@@ -13,6 +13,10 @@
     ./modules/hyprland.nix
   ];
 
+  # TODO current workarounds, remove once merged
+  # https://github.com/nix-community/stylix/pull/2557
+  stylix.targets.wayprompt.enable = false;
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "robin";
