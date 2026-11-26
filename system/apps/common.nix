@@ -81,6 +81,7 @@ in
           pkgs.vlc
           pkgs.kdePackages.gwenview
           pkgs.drawio
+          pkgs.jellyfin-desktop
 
           # Web
           pkgs.firefox
